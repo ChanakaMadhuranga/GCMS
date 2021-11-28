@@ -1,0 +1,34 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:500px ;
+    
+}
+body{
+    min-height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif; 
+    color: rgb(235, 78, 16);
+}
+
+.form-control:focus{
+    box-shadow:lightskyblue;
+}
+.bg-btn{
+    background:#fc4e51;
+    color:rgb(209, 19, 19);
+}
+.form-container{
+   
+    -webkit-box-shadow:-1px 4px 26px 11px rgba(0,0,0,0.75) ;
+    -moz-box-shadow:-1px 4px 26px 11px rgba(0,0,0,0.75);
+
+box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
+
+}
+a{
+    color: rgb(196, 43, 43);
+
+}

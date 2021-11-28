@@ -1,0 +1,685 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+     <title>GCMS | Garbage Collection Management System</title>
+    
+  <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="This is Garbage Collection Management System. Now you can request your waste collection through GCMS. Simply login with your account and enter the waste quantities and just send it.Don't worry we will alert you when your truck arriving. You can also find your truck's location with the map. Please be kind to seperate your waste properly before delivered. Let's keep our surrounding clean and make a clean city.">
+    <meta name="keywords" content="Garbage, Collection, Management, System, gcms, waste, trash, buy, dispose ">
+    <meta name="author" content="">
+
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+	<link href="./Website/css/footers.css" rel="stylesheet">
+	
+	<style type="text/css">
+	    html, body {
+	        overflow-x: hidden;
+	    }
+	
+    	@media only screen and (max-width: 600px) {
+              #welcome{
+              	position: absolute;
+    			opacity: 0.7;
+    			width: 100vw;
+    			z-index: -1;
+                height: 50vh;
+              }
+              	#wtruck{
+    			width: 45vw;
+    			left: 100vw;
+    			top: 90px;
+    			position:relative;
+    			z-index: +4;
+    		  }
+              #whome{
+    			width: 38vw;
+    			top: 175px;
+    			position:relative;
+    			z-index: +1;
+    		  }
+    		  	#wbin{
+    			width: 20vw;
+    			top: 220px;
+    			left: 0px;
+    			position:relative;
+    			z-index: +3;
+    		  }
+    		  #wroad{
+    			width: 100vw;
+    			top: 180px;
+    			min-height: 80px;
+    			position:relative;
+    			z-index: +2;
+    		  }
+    		  	#wman{
+    			width: 12vw;
+    			top: 200px;
+    			left: 0px;
+    			position:relative;
+    			z-index: +5;
+        		}
+        		#wmessage{
+        			display: none;
+        			width: 20vw;
+        			top: 225px;
+        			left: 60vw;
+        			position:absolute;
+        			z-index: +3;
+        		}
+        		#wsms{
+        			display: none;
+        			width: 22vw;
+        			top: 200px;
+        			left: 18vw;
+        			position:absolute;
+        			z-index: +3;
+        		}
+            		#wgps{
+        			display: none;
+        			width: 15vw;
+        			top: 200px;
+        			left: 24vw;
+        			position:absolute;
+        			z-index: +3;
+        		}
+        			#whometext{
+        			    position: relative;
+        			    display: none;
+    					width: 100vw; 
+    					text-align: center;
+    					z-index: +4;
+    				    top: -180px;
+    				    right: 50%;
+    				    transform: translate(50%,-50%);
+    				    text-transform: uppercase;
+    				    font-family:"Times New Roman";
+    				    font-size: 1em;
+    				    font-weight: 700;
+    				    color: green;
+    				    text-shadow: 1px 1px 1px black,  
+    				    1px 8px 6px rgba(16,16,16,0.4),
+    				    1px 16px 10px rgba(16,16,16,0.2),
+    				    1px 20px 35px rgba(16,16,16,0.2),
+    				    1px 24px 60px rgba(16,16,16,0.3);    		
+    			}
+    		
+            }
+
+    		@media only screen and (min-width: 600px){
+    			#welcome{
+    			position: absolute;
+    			opacity: 0.7;
+    			width: 100vw;
+    			height:65vh;
+    			z-index: -1;
+    			}
+    			#wtruck{
+    				width: 35vw;
+    				left: 100vw;
+    				top: 80px;
+    				position:relative;
+    				z-index: +4;
+    			}
+    			#wbin{
+    				width: 13vw;
+    				top: 280px;
+    				left: 10px;
+    				position:relative;
+    				z-index: +3;
+    			}
+    			#wroad{
+    				width: 100vw;
+    				top: 210px;
+    				min-height: 130px;
+    				position:relative;
+    				z-index: +2;
+    			}
+    			#whome{
+    				width: 30vw;
+    				top: 220px;
+    				position:relative;
+    				z-index: +1;
+    			}
+    			#wman{
+    				width: 5vw;
+    				top: 260px;
+    				left: 10px;
+    				position:relative;
+    				z-index: +5;
+    			}
+    			#wmessage{
+    				display: none;
+    				width: 15vw;
+    				top: 290px;
+    				left: 42vw;
+    				position:absolute;
+    				z-index: +3;
+    			}
+    			#wsms{
+    				display: none;
+    				width: 17vw;
+    				top: 200px;
+    				left: 18vw;
+    				position:absolute;
+    				z-index: +3;
+    			}
+    			#wgps{
+    				display: none;
+    				width: 10vw;
+    				top: 200px;
+    				left: 24vw;
+    				position:absolute;
+    				z-index: +3;
+    			}
+    			
+    			#whometext{
+    				display: none;
+    				width: 100vw; 
+    				text-align: center;
+    				z-index: +4;
+    				position: relative;
+    			    top: -250px; 
+    			    right: 50%;
+    			    transform: translate(50%,-50%);
+    			    text-transform: uppercase;
+    			    font-family:"Times New Roman";
+    			    font-size: 1.5em;
+    			    font-weight: 700;
+    			    color: green;
+    			    text-shadow: 1px 1px 1px black,  
+    			    1px 8px 6px rgba(16,16,16,0.4),
+    			    1px 16px 10px rgba(16,16,16,0.2),
+    			    1px 20px 35px rgba(16,16,16,0.2),
+    			    1px 24px 60px rgba(16,16,16,0.3);
+    			}
+    		
+    		}
+
+    		@media only screen and (min-width: 768px) {
+    			#welcome{
+    			position: absolute;
+    			opacity: 0.7;
+    			width: 100vw;
+    			height:80vh;
+    			z-index: -1;
+    			}
+    			#wtruck{
+    				width: 28vw;
+    				left: 100vw;
+    				top: 50px;
+    				position:relative;
+    				z-index: +4;
+    			}
+    			#wbin{
+    				width: 13vw;
+    				top: 300px;
+    				left: 25px;
+    				position:relative;
+    				z-index: +3;
+    			}
+    			#wroad{
+    				width: 100vw;
+    				top: 210px;
+    				min-height: 130px;
+    				position:relative;
+    				z-index: +2;
+    			}
+    			#whome{
+    				width: 30vw;
+    				top: 200px;
+    				position:relative;
+    				z-index: +1;
+    			}
+    			#wman{
+    				width: 5vw;
+    				top: 285px;
+    				left: 20px;
+    				position:relative;
+    				z-index: +5;
+    			}
+    			#wmessage{
+    				display: none;
+    				width: 15vw;
+    				top: 310px;
+    				left: 42vw;
+    				position:absolute;
+    				z-index: +3;
+    			}
+    			#wsms{
+    				display: none;
+    				width: 17vw;
+    				top: 180px;
+    				left: 18vw;
+    				position:absolute;
+    				z-index: +3;
+    			}
+    			#wgps{
+    				display: none;
+    				width: 10vw;
+    				top: 180px;
+    				left: 24vw;
+    				position:absolute;
+    				z-index: +3;
+    			}
+    			
+    			#whometext{
+    				display: none;
+    				width: 100vw; 
+    				text-align: center;
+    				z-index: +4;
+    				position: relative;
+    			    top: -300px; 
+    			    right: 50%;
+    			    transform: translate(50%,-50%);
+    			    text-transform: uppercase;
+    			    font-family:"Times New Roman";
+    			    font-size: 1.5em;
+    			    font-weight: 700;
+    			    color: green;
+    			    text-shadow: 1px 1px 1px black,  
+    			    1px 8px 6px rgba(16,16,16,0.4),
+    			    1px 16px 10px rgba(16,16,16,0.2),
+    			    1px 20px 35px rgba(16,16,16,0.2),
+    			    1px 24px 60px rgba(16,16,16,0.3);
+    			}
+    		} 
+    		
+    		@media only screen and (min-width: 992px) {
+    			#welcome{
+    			position: absolute;
+    			opacity: 0.7;
+    			width: 100vw;
+    			height:75vh;
+    			z-index: -1;
+    			}
+    			#wtruck{
+    				width: 28vw;
+    				left: 100vw;
+    				top: -50px;
+    				position:relative;
+    				z-index: +4;
+    			}
+    			#wbin{
+    				width: 13vw;
+    				top: 270px;
+    				left: 25px;
+    				position:relative;
+    				z-index: +3;
+    			}
+    			#wroad{
+    				width: 100vw;
+    				top: 150px;
+    				min-height: 130px;
+    				position:relative;
+    				z-index: +2;
+    			}
+    			#whome{
+    				width: 30vw;
+    				top: 140px;
+    				position:relative;
+    				z-index: +1;
+    			}
+    			#wman{
+    				width: 5vw;
+    				top: 250px;
+    				left: 20px;
+    				position:relative;
+    				z-index: +5;
+    			}
+    			#wmessage{
+    				display: none;
+    				width: 15vw;
+    				top: 270px;
+    				left: 41vw;
+    				position:absolute;
+    				z-index: +3;
+    			}
+    			#wsms{
+    				display: none;
+    				width: 17vw;
+    				top: 180px;
+    				left: 18vw;
+    				position:absolute;
+    				z-index: +3;
+    			}
+    			#wgps{
+    				display: none;
+    				width: 10vw;
+    				top: 180px;
+    				left: 24vw;
+    				position:absolute;
+    				z-index: +3;
+    			}
+    			
+    			#whometext{
+    				display: none;
+    				width: 100vw; 
+    				text-align: center;
+    				z-index: +4;
+    				position: absolute;
+    			    top: 200px; 
+    			    right: 50%;
+    			    transform: translate(50%,-50%);
+    			    text-transform: uppercase;
+    			    font-family:"Times New Roman";
+    			    font-size: 2.5em;
+    			    font-weight: 700;
+    			    color: green;
+    			    text-shadow: 1px 1px 1px black,  
+    			    1px 8px 6px rgba(16,16,16,0.4),
+    			    1px 16px 10px rgba(16,16,16,0.2),
+    			    1px 20px 35px rgba(16,16,16,0.2),
+    			    1px 24px 60px rgba(16,16,16,0.3);
+    			}
+    		} 
+	</style>
+	<!--<script> -->
+	<!--	$(document).ready(function(){-->
+	<!--	 setTimeout(function(){-->
+	<!--	  	console.log("clicked");-->
+	<!--	  	$("#wmessage").show(300).delay(2000).hide(500);-->
+	<!--	  	$("#wman").delay(2500).animate({left: '-30vw'}, "slow").hide(100);-->
+	<!--	  	$("#wsms").delay(5000).show(200).delay(2000).hide(500);-->
+	<!--	  	$("#wgps").delay(9000).show(200).delay(5000).hide(500);-->
+	<!--	    $("#wtruck").delay(10000).animate({left: '39vw'},4000);-->
+	<!--	    $("#whometext").delay(10000).slideDown(2000);-->
+	<!--	  },2000);-->
+	<!--	});-->
+	<!--</script>-->
+	
+	<script> 
+		function animate(){
+			$("#wmessage").show(300).delay(2000).hide(300);
+		  	$("#wman").delay(2500).animate({left: '-30vw'}, "slow").hide(100);
+		  	$("#wsms").delay(5000).show(200).delay(2000).hide(500);
+		  	$("#wgps").delay(9000).show(200).delay(5000).hide(500);
+		    $("#wtruck").delay(10000).animate({left: '28vw'},4000);
+		    $("#whometext").delay(10000).slideDown(2000);
+		    $("#wtruck").delay(3000).animate({left: '-50vw'},4000);
+		    $("#wtruck").delay(1000).animate({left: '100vw'},1);
+		    $("#wman").delay(19500).show(100).animate({left: '1vw'}, "slow");
+		}
+
+		$(document).ready(function(){
+		 setTimeout(animate,2000);
+		 setInterval(animate,25500);
+		});
+	</script>
+
+    <script>
+      //document.getElementById("result").innerHTML = sessionStorage.getItem("sessionModal");
+      var sessionModal = sessionStorage.getItem("sessionModal");
+      console.log(sessionModal);
+     if (sessionModal == null) {
+        $(document).ready(function(){
+            setTimeout(function() {
+                $('#exampleModal').modal('show');
+            }, 18500); 
+            sessionStorage.setItem("sessionModal", "true");
+        });
+    }
+  </script>
+  
+</head>
+
+<body>
+    
+    <!-- Modal -->
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="max-width: 100vw";>
+          <div class="modal-dialog">
+            <div class="modal-content text-center">
+              <div class="modal-header bg-success text-light">
+                <h4 class="modal-title w-100 text-center" id="exampleModalLabel">Welcome to GCMS</h4>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+        
+                <div class="row">
+                  <div class="col-4">
+                    <img class="img-fluid" src="./Website/images/guideman.png" alt="guideman" style="width: 40vw;">
+                  </div>
+        
+                  <!-- <div class="col-1"></div> -->
+        
+                  <div class="col-7">
+                    <h1 class="">Hi!</h1>
+                    <h4 class="text-danger">Are you new to the system?</h4>
+                    <h4 class="">If so, please refer to the guide.</h4>
+                    <div class="d-grid gap-2 mt-4">
+                      <a href="./Website/guide.html" class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+                        <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+                      </svg>
+                      Guide
+                      </a>
+                      </div>
+                  </div>
+                </div>
+                
+              </div>
+              <div class="modal-footer">
+               <!--  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        
+    
+
+  <div> <!-- Navigation div start -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="z-index: +6;">
+
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html"><img src="./Website/images/logo1.png" style="width:129.7px; height:42.6px;"></a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="./Website/guide.html">Guide</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="./Website/contact-us.html">Contact-us</a>
+            </li>
+
+          </ul>
+
+          <!-- <form class="d-flex m-2">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-secondary" type="submit">Search</button>
+          </form> -->
+         
+         <ul class="navbar-nav m-2">
+          <div class="dropdown m-1">
+          <button class="btn btn-outline-success dropdown-toggle" type="button" id="sign-in" data-bs-toggle="dropdown" aria-expanded="false">
+            Sign In
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="sign-in">
+            <li><a class="dropdown-item" href="./User/login.php">User</a></li>
+            <li><a class="dropdown-item" href="./Buyer/login.php">Buyer</a></li>
+          </ul>
+        </div>
+
+        <div class="dropdown m-1">
+          <button class="btn btn-primary dropdown-toggle" type="button" id="sign-up" data-bs-toggle="dropdown" aria-expanded="false">
+           Sign Up
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="sign-up">
+            <li><a class="dropdown-item" href="./User/signup.php">User</a></li>
+            <li><a class="dropdown-item" href="./Buyer/signup.php">Buyer</a></li>
+          </ul>
+        </div>
+         </ul> 
+
+        </div>
+      </div>
+
+    </nav>
+  </div>  <!-- Navigation div end -->
+  
+  
+  <div>
+		<img id="welcome" src="./Website/images/wbackground.png">
+		<img id="whome" src="./Website/images/whome.png">
+		<img id="wmessage" src="./Website/images/wmessage.png">
+		<img id="wsms" src="./Website/images/wsms2.png">
+		<img id="wgps" src="./Website/images/wgps.png">
+		<img id="wbin" src="./Website/images/wbin.png">
+		<img id="wman" src="./Website/images/wman.png">
+		<img id="wroad" src="./Website/images/wroad.png">
+		<img id="wtruck" src="./Website/images/wtruck1.png">
+		<div id="whometext"><p>Welcome to <br> Garbage Collection Management System</p></div>
+	</div>
+  
+  
+
+<!--  <div class="card bg-dark text-white text-center rounded-0">-->
+<!--  <img src="./Website/images/nature1.jpg" class="card-img img-fluid" alt="..." style=" filter: brightness(60%); min-height:40vh;">-->
+<!--  <div class="card-img-overlay">-->
+<!--    <h1 class="card-title font-weight-bold" style="font-size: 5vw">Welcome!</h1>-->
+<!--    <p class="container-fluid card-text lh-sm" style="font-size: 3vw">Now you can request your waste collection through GCMS. Simply login with your account and enter the waste quantities and just send it.Don't worry we will alert you when your truck arriving. You can also find your truck's location with the map. Please be kind to seperate-->
+<!--      your waste properly before delivered. Let's keep our surrounding clean and make a clean city.  For more information please refer the Guide -->
+<!--      section.</p>-->
+    
+<!--  </div>-->
+<!--</div>-->
+<br>
+<br>
+<br>
+<br>
+
+  <div class=" row  "> <!--first row first div start -->
+
+    <div id="carouseImageSlide" class="carousel slide col-12 col-lg-6" data-bs-ride="carousel" > <!-- Image slider start -->
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <img class="mx-auto d-block img-fluid shadow-lg" src="./Website/images/slide1.jpg" alt="First slide" style=" filter: brightness(80%);">
+        </div>
+
+        <div class="carousel-item">
+          <img class="mx-auto d-block img-fluid shadow-lg" src="./Website/images/slide2.jpg" alt="Second slide" style=" filter: brightness(80%);">
+        </div>
+
+        <div class="carousel-item">
+          <img class="mx-auto d-block img-fluid shadow-lg" src="./Website/images/slide3.jpg" alt="Third slide" style=" filter: brightness(80%);">
+        </div>
+     </div> <!-- Image slider end -->
+    </div>  <!-- first row first div end -->
+
+
+    <div class="card-group col-12 col-lg-6 shadow"> <!-- first row second div start -->
+
+      <div class="card">
+        <a href="./Website/contact-us.html" style="text-decoration: none">
+        <img src="./Website/images/Call.jpg" class="card-img-top img-fluid" alt="...">
+        <div class="card-body text-dark">
+          <h5 class="card-title">Contact Us</h5>
+          <p class="card-text">Contact us for further information. We are please to help you.</p>
+        </div>
+        </a>
+      </div>
+
+      <div class="card">
+        <a href="./Website/waste_categories.html" style="text-decoration: none">
+        <img src="./Website/images/Bin.jpg" class="card-img-top img-fluid" alt="...">
+        <div class="card-body text-dark">
+          <h5 class="card-title">Waste Categories</h5>
+          <p class="card-text">Separate your waste according to these categories before deliver it to us.</p>
+        </div>
+        </a>
+      </div>
+
+      <div class="card">
+        <a href="./Website/sell_waste.html" style="text-decoration: none">
+        <img src="./Website/images/sell.jpg" class="card-img-top img-fluid" alt="...">
+        <div class="card-body text-dark ">
+          <h5 class="card-title">Sell your waste</h5>
+          <p class="card-text">Sell your waste here and earn some extra cash </p>
+        </div>
+        </a> 
+      </div>
+
+    </div>
+
+  </div> <!-- first row end -->
+  
+ <!--  Footer start -->
+<div class="b-example-divider"></div>
+<div class="container-fluid text-light" id="fbg">
+  <div class="row">
+    <hr>
+  </div>
+      <footer class="row">
+        <div class="col-11 col-md-3 col-lg-2 mt-4">
+            <center>
+              <img src="./Website/images/logo_mono.png" class="img-fluid" style="width: 200px; height:auto;">
+               <p class="text-center text-muted">&copy; 2021 Company, Inc</p>
+           </center>
+        </div>
+
+      <div class="row col-12 col-md-8 col-lg-8 justify-content-end" id="ffs" style="font-size: 12px;">
+
+        <div class="col-4 col-md-3 col-lg-3 mt-3 mb-3">
+          <h5>Links</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="./index.html" class="nav-link p-0 text-light"> <span class="text-muted">></span> Home</a></li>
+            <li class="nav-item mb-2"><a href="./Website/guide.html" class="nav-link p-0 text-light"> <span class="text-muted">></span> Guide</a></li>
+            <li class="nav-item mb-2"><a href="./Website/contact-us.html" class="nav-link p-0 text-light"><span class="text-muted">></span> Contact-Us</a></li>
+            <li class="nav-item mb-2"><a href="./Website/about.html" class="nav-link p-0 text-light"> <span class="text-muted">></span> About</a></li>
+          </ul>
+        </div>
+
+        
+        <div class="col-4 col-md-3 col-lg-3 mt-3 mb-3">
+          <h5>Links</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="./Website/waste_categories.html" class="nav-link p-0 text-light"> <span class="text-muted">></span> Waste Types</a></li>
+            <li class="nav-item mb-2"><a href="./Website/sell_waste.html" class="nav-link p-0 text-light"> <span class="text-muted">></span> Sell Waste</a></li>
+            <li class="nav-item mb-2"><a href="./Website/pricing.html" class="nav-link p-0 text-light"><span class="text-muted">></span> Pricing</a></li>
+             <li class="nav-item mb-2"><a href="./Website/FAQs.html" class="nav-link p-0 text-light"> <span class="text-muted">></span> FAQs</a></li>
+          </ul>
+        </div>
+
+        <div class="col-4 col-md-3 col-lg-3 mt-3 mb-3">
+          <h5>Access</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="./User/login.php" class="nav-link p-0 text-light"><span class="text-muted">></span> User Sign In</a></li>
+            <li class="nav-item mb-2"><a href="./User/signup.php" class="nav-link p-0 text-light"> <span class="text-muted">></span> User Sign Up</a></li>
+            <li class="nav-item mb-2"><a href="./Buyer/login.php" class="nav-link p-0 text-light"><span class="text-muted">></span> Buyer Sign In</a></li>
+            <li class="nav-item mb-2"><a href="./Buyer/signup.php" class="nav-link p-0 text-light"> <span class="text-muted">></span> Buyer Sign Up</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      </footer>
+    </div>
+<!-- Footer End -->
+
+ 
+
+
+</body>
+</html>
