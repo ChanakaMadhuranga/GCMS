@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>User Guide</title>
+
+	 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <link href="./css/footers.css" rel="stylesheet">
+
+    <script>
+		$(document).ready(function(){
+		  $("#user").click(function(){ 
+		    $("#buyer_guide").hide(1500);
+		    $("#user_guide").show(2000);
+		  });
+		  $("#buyer").click(function(){
+		   	$("#user_guide").hide(1500);
+		    $("#buyer_guide").show(2500);
+		  });
+		});
+    </script>
+
+</head>
+<body>
+	<div> <!-- Navigation div start -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+      <div class="container-fluid">
+       <a class="navbar-brand" href="../index.html"><img src="./images/logo1.png" style="width:129.7px; height:42.6px;"></a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./guide.html">Guide</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="./contact-us.html">Contact-us</a>
+            </li>
+
+          </ul>
+
+          <!-- <form class="d-flex m-2">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-secondary" type="submit">Search</button>
+          </form> -->
+         
+         <ul class="navbar-nav m-2">
+          <div class="dropdown m-1">
+          <button class="btn btn-outline-success dropdown-toggle" type="button" id="sign-in" data-bs-toggle="dropdown" aria-expanded="false">
+            Sign In
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="sign-in">
+            <li><a class="dropdown-item" href="../User/login.php">User</a></li>
+            <li><a class="dropdown-item" href="../Buyer/login.php">Buyer</a></li>
+          </ul>
+        </div>
+
+        <div class="dropdown m-1">
+          <button class="btn btn-primary dropdown-toggle" type="button" id="sign-up" data-bs-toggle="dropdown" aria-expanded="false">
+           Sign Up
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="sign-up">
+            <li><a class="dropdown-item" href="../User/signup.php">User</a></li>
+            <li><a class="dropdown-item" href="../Buyer/signup.php">Buyer</a></li>
+          </ul>
+        </div>
+         </ul> 
+
+        </div>
+      </div>
+
+    </nav>
+  </div>  <!-- Navigation div end -->
+
+
+	<div class="container-fluid col-12 col-lg-4 col-md-6 align-content-center rounded mt-2">
+		<div class="row">
+			<div class="">
+				<button id="user" class="btn btn-primary col-5 m-2 ">User</button>
+				<button id="buyer" class="btn btn-primary col-5 m-2">Buyer</button>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="container" id="user_guide">
+
+		<div class="fs-2 fw-bold text-center m-3" style="opacity:0.8;">User's Guide</div>
+
+		<div class="card shadow mt-2">
+			<div class="row">
+				<div class="col-12 col-md-6 col-lg-8 col-xl-8">
+					<h4 class="text-danger m-1"><b>STEP 1</b></h4>
+					<img src="./images/ustep1.jpg" class="img-fluid" alt=" Step1 Image">
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 col-xl-4 fs-5 ">
+					<br><br>
+					<p class="border border-4 border-danger p-4 rounded-pill me-2">
+						To register as a new user, select <b>User</b> from Sign Up.
+					<p>
+				</div>	
+			</div>
+		</div>
+
+		<div class="card shadow mt-2">
+			<div class="row">
+				<div class="col-12 col-md-6 col-lg-8 col-xl-8">
+					<h4 class="text-danger m-1"><b>STEP 2</b></h4>
+					<img src="./images/ustep2.jpg" class="img-fluid" alt=" Step2 Image">
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 col-xl-4 fs-5 ">
+					<br><br>
+					<p class="border border-4 border-danger p-4 rounded-pill me-2">
+						Tap the blue colour button to mark your home location. Then fill all the details in the form and click <b>Submit</b>.
+					</p>
+				</div>	
+			</div>
+		</div>
+
+		<div class="card shadow mt-2">
+			<div class="row">
+				<div class="col-12 col-md-6 col-lg-8 col-xl-8">
+					<h4 class="text-danger m-1"><b>STEP 3</b></h4>
+					<img src="./images/ustep3.jpg" class="img-fluid" alt=" Step3 Image">
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 col-xl-4 fs-5 ">
+					<br><br>
+					<p class="border border-4 border-danger p-4 rounded-pill me-2">
+						Click the link in your email to verify your new account.
+					</p>
+				</div>	
+			</div>
+		</div>
+
+		<div class="card mt-2">
+			<div class="alert alert-primary mt-3" role="alert">
+			  	Wait until admin verifies your account.
+			</div>
+		</div>
+
+		<div class="card shadow mt-2">
+			<div class="row">
+				<div class="col-12 col-md-6 col-lg-8 col-xl-8">
+					<h4 class="text-danger m-1"><b>STEP 4</b></h4>
+					<img src="./images/ustep4.jpg" class="img-fluid" alt=" Step4 Image">
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 col-xl-4 fs-5 ">
+					<br><br>
+					<p class="border border-4 border-danger p-4 rounded-pill me-2">
+						To login, select <b>User</b> from Sign In.
+					</p>
+				</div>	
+			</div>
+		</div>
+
+		<div class="card shadow mt-2">
+			<div class="row">
+				<div class="col-12 col-md-6 col-lg-8 col-xl-8">
+					<h4 class="text-danger m-1"><b>STEP 5</b></h4>
+					<img src="./images/ustep5.jpg" class="img-fluid" alt=" Step5 Image">
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 col-xl-4 fs-5 ">
+					<br><br>
+					<p class="border border-4 border-danger p-4 rounded-pill me-2">
+					 	Login to your account with <b>NIC</b> and <b>Password</b>.
+					</p>
+				</div>	
+			</div>
+		</div>
+
+		<div class="card shadow mt-2">
+			<div class="row">
+				<div class="col-12 col-md-6 col-lg-8 col-xl-8">
+					<h4 class="text-danger m-1"><b>STEP 6</b></h4>
+					<img src="./images/ustep6.jpg" class="img-fluid" alt=" Step6 Image">
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 col-xl-4 fs-5 ">
+					<br><br>
+					<p class="border border-4 border-danger p-4 rounded-pill me-2">
+					 	Click <b>Personal Bin</b> in the navigation bar.
+					</p>
+				</div>	
+			</div>
+		</div>
+
+		<div class="card shadow mt-2">
+			<div class="row">
+				<div class="col-12 col-md-6 col-lg-8 col-xl-8">
+					<h4 class="text-danger m-1"><b>STEP 7</b></h4>
+					<img src="./images/ustep7.jpg" class="img-fluid" alt=" Step7 Image">
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 col-xl-4 fs-5 ">
+					<br><br>
+					<p class="border border-4 border-danger p-4 rounded-pill me-2">
+					 	Separate the your waste into containers according to these categories
+					</p>
+				</div>	
+			</div>
+		</div>
+
+		<div class="card shadow mt-2">
+			<div class="row">
+				<div class="col-12 col-md-6 col-lg-8 col-xl-8">
+					<h4 class="text-danger m-1"><b>STEP 8</b></h4>
+					<img src="./images/ustep8.jpg" class="img-fluid" alt=" Step8 Image">
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 col-xl-4 fs-5 ">
+					<br><br>
+					<p class="border border-4 border-danger p-4 rounded-pill me-2">
+						In the personal bin, enter the amounts of your separated waste as sellable and dispose in the <b>Personal Bin Entry</b> and Submit.
+				    </p>
+					<p class="border border-4 border-danger p-4 rounded-pill me-2">
+						<b class="text-danger ms-4">1 Unit = Full of 10 litre bucket</b>
+					</p>
+				</div>	
+			</div>
+		</div>
+
+		<div class="card shadow mt-2">
+			<div class="row">
+				<div class="col-12 col-md-6 col-lg-8 col-xl-8">
+					<h4 class="text-danger m-1"><b>STEP 9</b></h4>
+					<img src="./images/ustep9.jpg" class="img-fluid" alt=" Step9 Image">
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 col-xl-4 fs-5 ">
+					<br><br>
+					<p class="border border-4 border-danger p-4 rounded-pill me-2">
+							<b>1.</b>You will get a SMS alert when a garbage truck is arriving.
+					</p>
+					<p class="border border-4 border-danger p-4 rounded-pill me-2">
+							<b>2.</b>Dispose your waste after the truck arrived.
+					</p>
+					<p class="border border-4 border-danger p-4 rounded-pill me-2">
+							<b>3.</b>You will get a SMS alert to login & confirm the disposed amounts.
+					</p>
+				</div>	
+			</div>
+		</div>
+
+		<div class="card shadow mt-2">
+			<div class="row">
+				<div class="col-12 col-md-6 col-lg-8 col-xl-8">
+					<h4 class="text-danger m-1"><b>STEP 10</b></h4>
+					<img src="./images/ustep10.jpg" class="img-fluid" alt=" Step10 Image">
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 col-xl-4 fs-5 ">
+					<br><br>
+					<p class="border border-4 border-danger p-4 rounded-pill me-2">
+						Click <b>here</b> on the notification you see in the Home page after login into your account.
+					</p>
+				</div>	
+			</div>
+		</div>
+
+		<div class="card shadow mt-2">
+			<div class="row">
+				<div class="col-12 col-md-6 col-lg-8 col-xl-8">
+					<h4 class="text-danger m-1"><b>STEP 11</b></h4>
+					<img src="./images/ustep11.jpg" class="img-fluid" alt=" Step11 Image">
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 col-xl-4 fs-5 ">
+					<br><br>
+					<p class="border border-4 border-danger p-4 rounded-pill me-2">
+						Enter the quantities of waste you disposed to the truck in the <b>Disposed</b> section and click <b>Submit.</b>
+					</p>
+					<p class="border border-4 border-danger p-4 rounded-pill">
+						<b class="bg-warning rounded text-danger p-1 m-sm-2">This is a one time submission only</b>
+					</p>
+				</div>	
+			</div>
+		</div>
+
+		<div class="card mt-2">
+			<div class="alert alert-primary mt-3" role="alert">
+			  	Points will be added to your account after disposing. You can find the total point you have earned in the Home page.
+			</div>
+		</div>
+
+		<div class="card mt-2">
+			<div class="alert alert-primary mt-3 mb-3" role="alert">
+			  	You will find notifications in your account's Home page when Buyers book your waste to purchase.
+			</div>
+		</div>
+
+
+	</div>
+
+
+
+	<div class="container" id="buyer_guide" style="display: none;">
+
+			 <div class="fs-2 fw-bold text-center m-3" style="opacity:0.8;">Buyer's Guide</div>
+
+		<div class="card shadow mt-2">
+			<div class="row">
+				<div class="col-12 col-md-6 col-lg-8 col-xl-8">
+					<h4 class="text-danger m-1"><b>STEP 1</b></h4>
+					<img src="./images/bstep1.jpg" class="img-fluid" alt=" Step1 Image">
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 col-xl-4 fs-5 ">
+					<br><br>
+					<p class="border border-4 border-danger p-4 rounded-pill me-2">
+						To register as a new buyer, select <b>Buyer</b> from Sign Up.
+					<p>
+				</div>	
+			</div>
+		</div>
+
+		<div class="card shadow mt-2">
+			<div class="row">
+				<div class="col-12 col-md-6 col-lg-8 col-xl-8">
+					<h4 class="text-danger m-1"><b>STEP 2</b></h4>
+					<img src="./images/bstep2.jpg" class="img-fluid" alt=" Step2 Image">
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 col-xl-4 fs-5 ">
+					<br><br>
+					<p class="border border-4 border-danger p-4 rounded-pill me-2">
+						 Fill all the details in the form correctly and click <b>Submit</b>.
+					</p>
+				</div>	
+			</div>
+		</div>
+
+		<div class="card shadow mt-2">
+			<div class="row">
+				<div class="col-12 col-md-6 col-lg-8 col-xl-8">
+					<h4 class="text-danger m-1"><b>STEP 3</b></h4>
+					<img src="./images/bstep3.jpg" class="img-fluid" alt=" Step3 Image">
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 col-xl-4 fs-5 ">
+					<br><br>
+					<p class="border border-4 border-danger p-4 rounded-pill me-2">
+						Click the link in your email to verify your new account.
+					</p>
+				</div>	
+			</div>
+		</div>
+
+		<div class="card mt-2">
+			<div class="alert alert-primary mt-3" role="alert">
+			  	Wait until admin verifies your account.
+			</div>
+		</div>
+
+		<div class="card shadow mt-2">
+			<div class="row">
+				<div class="col-12 col-md-6 col-lg-8 col-xl-8">
+					<h4 class="text-danger m-1"><b>STEP 4</b></h4>
+					<img src="./images/bstep4.jpg" class="img-fluid" alt=" Step4 Image">
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 col-xl-4 fs-5 ">
+					<br><br>
+					<p class="border border-4 border-danger p-4 rounded-pill me-2">
+						To login, select <b>Buyer</b> from Sign In.
+					</p>
+				</div>	
+			</div>
+		</div>
+
+		<div class="card shadow mt-2">
+			<div class="row">
+				<div class="col-12 col-md-6 col-lg-8 col-xl-8">
+					<h4 class="text-danger m-1"><b>STEP 5</b></h4>
+					<img src="./images/bstep5.jpg" class="img-fluid" alt=" Step5 Image">
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 col-xl-4 fs-5 ">
+					<br><br>
+					<p class="border border-4 border-danger p-4 rounded-pill me-2">
+					 	Login to your account with <b>NIC</b> and <b>Password</b>.
+					</p>
+				</div>	
+			</div>
+		</div>
+
+		<div class="card shadow mt-2">
+			<div class="row">
+				<div class="col-12 col-md-6 col-lg-8 col-xl-8">
+					<h4 class="text-danger m-1"><b>STEP 6</b></h4>
+					<img src="./images/bstep6.jpg" class="img-fluid" alt=" Step6 Image">
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 col-xl-4 fs-5 ">
+					<br><br>
+					<p class="border border-4 border-danger p-4 rounded-pill me-2">
+					 	<b>1.</b>Find the details of total collection of waste in the area from the bar chart.
+					</p>
+					<p class="border border-4 border-danger p-4 rounded-pill me-2">
+					 	<b>2.</b>Find the details of individual waste details with the locations from the google map.
+					</p>
+				</div>	
+			</div>
+		</div>
+
+		<div class="card shadow mt-2">
+			<div class="row">
+				<div class="col-12 col-md-6 col-lg-8 col-xl-8">
+					<h4 class="text-danger m-1"><b>STEP 7</b></h4>
+					<img src="./images/bstep7.jpg" class="img-fluid" alt=" Step7 Image">
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 col-xl-4 fs-5 ">
+					<br><br>
+					<p class="border border-4 border-danger p-4 rounded-pill me-2">
+					 	Click <b>Booking</b> in the navigatiion bar.
+					</p>
+				</div>	
+			</div>
+		</div>
+
+		<div class="card shadow mt-2">
+			<div class="row">
+				<div class="col-12 col-md-6 col-lg-8 col-xl-8">
+					<h4 class="text-danger m-1"><b>STEP 8</b></h4>
+					<img src="./images/bstep8.jpg" class="img-fluid" alt=" Step8 Image">
+				</div>
+				<div class="ccol-12 col-md-6 col-lg-4 col-xl-4 fs-5 ">
+					<br><br>
+					<p class="border border-4 border-danger p-4 rounded-pill me-2">
+					 	<b>1.</b>Select the garbage quantities as you prefer and set a <b>date</b> to pickup.
+					</p>
+					<p class="border border-4 border-danger p-4 rounded-pill me-2">
+					 	<b>2.</b>Click <b>Add to List</b> to book the waste.
+					</p>
+				</div>	
+			</div>
+		</div>
+
+		<div class="card shadow mt-2">
+			<div class="row">
+				<div class="col-12 col-md-6 col-lg-8 col-xl-8">
+					<h4 class="text-danger m-1"><b>STEP 9</b></h4>
+					<img src="./images/bstep9.jpg" class="img-fluid" alt=" Step9 Image">
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 col-xl-4 fs-5 ">
+					<br><br>
+					<p class="border border-4 border-danger p-4 rounded-pill me-2">
+					 	Click the <b>Truck icon</b> in the navigatiion bar to view your cart.
+					</p>
+				</div>	
+			</div>
+		</div>
+
+		<div class="card shadow mt-2 mb-2">
+			<div class="row">
+				<div class="col-12 col-md-6 col-lg-8 col-xl-8">
+					<h4 class="text-danger m-1"><b>STEP 10</b></h4>
+					<img src="./images/bstep10.jpg" class="img-fluid" alt=" Step10 Image">
+				</div>
+				<div class="col-12 col-md-6 col-lg-4 col-xl-4 fs-5 ">
+					<br><br>
+					<p class="border border-4 border-danger p-4 rounded-pill me-2">
+					 	Find your details about all the booked waste to be purchased.
+					</p>
+				</div>	
+			</div>
+		</div>
+		
+	</div>
+    
+     <!--  Footer start -->
+    <div class="b-example-divider"></div>
+    <div class="container-fluid text-light" id="fbg">
+      <div class="row">
+        <hr>
+      </div>
+          <footer class="row">
+            <div class="col-11 col-md-3 col-lg-2 mt-4">
+                <center>
+                  <img src="./images/logo_mono.png" class="img-fluid" style="width: 200px; height:auto;">
+                   <p class="text-center text-muted">&copy; 2021 Company, Inc</p>
+                </center>
+            </div>
+    
+          <div class="row col-12 col-md-8 col-lg-8 justify-content-end" id="ffs" style="font-size: 12px;">
+    
+            <div class="col-4 col-md-3 col-lg-3 mt-3 mb-3">
+              <h5>Links</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="../index.html" class="nav-link p-0 text-light"> <span class="text-muted">></span> Home</a></li>
+                <li class="nav-item mb-2"><a href="./guide.html" class="nav-link p-0 text-light"> <span class="text-muted">></span> Guide</a></li>
+                <li class="nav-item mb-2"><a href="./contact-us.html" class="nav-link p-0 text-light"><span class="text-muted">></span> Contact-Us</a></li>
+                <li class="nav-item mb-2"><a href="./about.html" class="nav-link p-0 text-light"> <span class="text-muted">></span> About</a></li>
+              </ul>
+            </div>
+    
+            
+            <div class="col-4 col-md-3 col-lg-3 mt-3 mb-3">
+              <h5>Links</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="./waste_categories.html" class="nav-link p-0 text-light"> <span class="text-muted">></span> Waste Types</a></li>
+                <li class="nav-item mb-2"><a href="./sell_waste.html" class="nav-link p-0 text-light"> <span class="text-muted">></span> Sell Waste</a></li>
+                <li class="nav-item mb-2"><a href="./pricing.html" class="nav-link p-0 text-light"><span class="text-muted">></span> Pricing</a></li>
+                 <li class="nav-item mb-2"><a href="./FAQs.html" class="nav-link p-0 text-light"> <span class="text-muted">></span> FAQs</a></li>
+              </ul>
+            </div>
+    
+            <div class="col-4 col-md-3 col-lg-3 mt-3 mb-3">
+              <h5>Access</h5>
+              <ul class="nav flex-column">
+                <li class="nav-item mb-2"><a href="../User/login.php" class="nav-link p-0 text-light"><span class="text-muted">></span> User Sign In</a></li>
+                <li class="nav-item mb-2"><a href="../User/signup.php" class="nav-link p-0 text-light"> <span class="text-muted">></span> User Sign Up</a></li>
+                <li class="nav-item mb-2"><a href="../Buyer/login.php" class="nav-link p-0 text-light"><span class="text-muted">></span> Buyer Sign In</a></li>
+                <li class="nav-item mb-2"><a href="../Buyer/signup.php" class="nav-link p-0 text-light"> <span class="text-muted">></span> Buyer Sign Up</a></li>
+              </ul>
+            </div>
+    
+          </div>
+    
+          </footer>
+        </div>
+    <!-- Footer End -->
+		
+	
+
+</body>
+</html>
