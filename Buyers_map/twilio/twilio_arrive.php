@@ -9,8 +9,8 @@ $u_first_name = $_POST['u_first_name'];
 $u_first_name = trim($u_first_name,'"');
 
 // Your Account SID and Auth Token from twilio.com/console
-$account_sid = 'AC955be088bb8b969c8569f88684fc6293';
-$auth_token = 'c4420ac194738b25366e6f45320f4aba';
+$account_sid = 'your sid';
+$auth_token = 'your token';
 // In production, these should be environment variables. E.g.:
 // $auth_token = $_ENV["TWILIO_AUTH_TOKEN"]
 
